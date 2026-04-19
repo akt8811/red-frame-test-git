@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>赤枠描画テスト</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>赤枠描画テスト</h1>
+
+    <p class="description">
+      画像をアップロードして、ボタンを押すと赤枠が表示されます。<br>
+      画像をクリックすると、クリックした位置へ赤枠が移動します。<br>
+      赤枠を入れた状態で「スクショ用表示」を押すと、撮影しやすい画面になります。
+    </p>
+
+    <div class="controls">
+      <input type="file" id="imageInput" accept="image/*" />
+      <button id="showFrameButton" disabled>赤枠を表示</button>
+      <button id="hideFrameButton" disabled>赤枠を非表示</button>
+      <button id="screenshotModeButton" disabled>スクショ用表示</button>
+    </div>
+
+    <p id="statusMessage" class="status">まずは画像を選択してください。</p>
+
+    <div id="imageArea" class="image-area">
+      <p class="placeholder">ここに画像が表示されます</p>
+      <img id="previewImage" alt="アップロード画像" />
+      <div id="redFrame" class="red-frame"></div>
+    </div>
+  </main>
+
+  <!-- スクショ用の全画面表示 -->
+  <div id="screenshotOverlay" class="screenshot-overlay">
+    <button id="closeScreenshotButton" class="close-button">閉じる</button>
+
+    <div id="screenshotPreview" class="screenshot-preview">
+      <img id="screenshotImage" alt="スクショ用画像" />
+      <div id="screenshotFrame" class="screenshot-frame"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
